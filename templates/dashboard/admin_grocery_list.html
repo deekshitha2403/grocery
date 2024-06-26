@@ -1,0 +1,30 @@
+{% extends 'dashboard/dashboard_base.html' %}
+{% block content %}
+<h1 class="text-center my-2">Grocery lists</h1>
+<table class="table table-primary table-bordered" >
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Grocery name</th>
+        <th scope="col">prize</th>
+        <th scope="col">grocery_image</th>
+        <th scope="col-3" colspan="3">Action</th>
+
+      </tr>
+    </thead>
+    <tbody>
+    {% for product in grocerys %}
+      <tr>
+        <th>{{ forloop.counter }}</th>
+        <td>{{ product.grocery_name}}</td>
+        <td>{{ product.prize }}</td>
+        <td><img src="{{product.image.url}}" height="40"></td>
+        <td><a class=" btn btn-primary w-100"  href="#">Update</a></td>
+        <td><a class=" btn btn-danger w-100"  href="/order-delete/{{grocery.id}}/">Delete</a></td>
+        <td><a class=" btn btn-info w-100"  href="#">Details</a></td>
+
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+{% endblock content %}

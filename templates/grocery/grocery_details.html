@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="card" style="width: 18rem;">
+    <img src="{{detail.image.url}}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h1 class="card-title">{{detail.grocery_name}} 1kg</h1>
+      <h1 class="card-title">₹{{detail.prize}}</h1>
+      <button type="button" class="btn-close" aria-label="Close"><a href="#" class="btn btn-primary">By now</a></button>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends 'dashboard/dashboard_base.html' %}
+{% block extra_dashboard_css %}
+<style>
+    .buttons{
+        text-decoration: none;
+        background-color: aqua;
+        border: 1px solid red;
+        border-radius: 8px;
+        padding: 3px;
+        color: black;
+    }
+</style>
+{% endblock %}
+{% block content %}
+<h1 class="text-center my-2">Grocery lists</h1>
+<a href="" class="buttons">All Orders</a>
+<a href="?status=confirmed" class="buttons">Confirmed Orders</a>
+<a href="" class="buttons">Processing Orders</a>
+<a href="" class="buttons">Cancelled Orders</a>
+<a href="" class="buttons">Delivered Orders</a>
+<table class="table table-primary table-bordered" >
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">grocery name</th>
+        <th scope="col">prize</th>
+        <th scope="col">grocery_image</th>
+        <th scope="col">Status</th>
+
+      </tr>
+    </thead>
+    <tbody>
+    {% for order in orders %}
+      <tr>
+        <th>{{ forloop.counter }}</th>
+        <td>{{ order.grocery.grocery_name }}</td>
+        <td>{{ order.grocery.prize }}</td>
+        <td><img src="{{order.grocery.image.url}}" height="40"></td>
+        <td>{{ order.status }}</td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+{% endblock content %}

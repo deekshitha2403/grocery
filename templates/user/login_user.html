@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="row">
+    <div class="col-md-4 offset-sm-4">
+      <div class="card">
+        <h3 class="text-center my-3">Login</h3>
+        <div class="card-body">
+          <form action="." method="post">
+            {% csrf_token %}
+            <div class="mb-3">
+              <label for="usernameFormControlInput1" class="form-label">User Name</label>
+              <input type="text" class="form-control" id="usernameFormControlInput1" placeholder="Enter your username" name="user_name" required> 
+               <br>
+            </div>
+            <div class="mb-3">
+              <label for="passwordFormControlInput1" class="form-label">Password</label>
+              <input type="password" class="form-control" id="passwordFormControlInput1" placeholder="Enter your password" name="password_one" required> 
+              <br>
+            </div>
+              <input type="submit" class="btn btn-primary w-100">
+              <p class="text-center">Not an account, please <a href="/user/register-user/">Register</a></p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+</div>
+{% endblock %}

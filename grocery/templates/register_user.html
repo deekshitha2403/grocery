@@ -1,0 +1,37 @@
+
+<div class="row">
+  <div class="col-md-4 offset-sm-4">
+    <div class="card">
+    <h3 class="text-center my-3">Registration</h3>
+      <div class="card-body">
+        <form action='/user/login-user/' method="post">
+          {% csrf_token %}
+          <div class="mb-3">
+            <label for="usernameFormControlInput1" class="form-label">User Name</label> 
+            <input type="text" class="form-control" id="usernameFormControlInput1" placeholder="" name="user_name" required> <br>
+            <br>
+          </div>
+          <div class="mb-3">
+            <label for="emailFormControlInput1" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="emailFormControlInput1" placeholder="" name="user_email" required> <br>
+            <br>
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Password</label>
+            <input type="password" class="form-control" id="exampleFormControlInput1" placeholder="" name="password_one" required> <br>
+            <br>
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Confirm Password</label>
+            <input type="password" class="form-control" id="exampleFormControlInput1" placeholder="" name="password_two" required> <br>
+            <br>
+          </div>
+          <div class="mb-3">
+            <input type="submit" class="btn btn-primary w-100">
+            <p class="text-center">Already a member, then <a href="/userS/login-user/">Login</a></p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

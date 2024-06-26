@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+<form action="/update-grocery/{{grocery.id}}/" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    Grocery name: <input type="text" name="grocery_name" value="{{grocery.grocery_name}}"> <br><br>
+    Prize: <input type="number" name="prize" value="{{grocery.prize}}"><br><br>
+    Grocery image: <input type="file" name="image" value="{{grocery.image}}"><br><br>
+    <input type="submit">
+</form>
+{% endblock %}
